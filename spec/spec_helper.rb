@@ -75,4 +75,8 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 =end
+  ENV["RAILS_ENV"] ||= 'test'
+  require File.expand_path("../../config/environment", __FILE__)
+  require 'rspec/rails'
+  config.include Capybara::DSL
 end
